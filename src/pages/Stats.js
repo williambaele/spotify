@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import Filters from "../components/Filters";
 
 const Stats = () => {
   return (
