@@ -11,11 +11,11 @@ function App() {
             />
           </div>
           <div className="justify-center my-6 grid text-center space-y-4">
-            <h1 className="text-3xl text-[#1ed760] font-bold">SPOTIFY STATS</h1>
+            <h1 className="text-5xl text-[#1ed760] font-bold">SPOTIFY STATS</h1>
             <p className="text-xl text-white">
-              Check what you've been listening to !
+              Check your stats in a second
             </p>
-            <button className="rounded-full bg-[#1DB954] py-3 px-2 font-bold text-white flex gap-4 items-center justify-center">
+            <button className="rounded-full bg-[#1DB954] hover:bg-[#1DB954]/90 py-3 px-2 font-bold text-white flex gap-4 items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
