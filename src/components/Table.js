@@ -12,6 +12,7 @@ const Table = () => {
             className="h-16 rounded-lg"
           />
         </div>
+
         <div className="col-span-2">
           <h2 className="text-3xl font-large text-white"> Jul</h2>
         </div>
