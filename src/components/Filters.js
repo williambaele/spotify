@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Filters = () => {
   const [activeTypeFilter, setActiveTypeFilter] = useState("artists");
-  const [timeFilter, setTimeFilter] = useState("");
+  const [timeFilter, setTimeFilter] = useState("1m");
 
   return (
     <div className="container mx-auto py-10">
@@ -37,21 +37,36 @@ const Filters = () => {
               </button>
             </div>
             <div className="flex gap-2">
-              <button
+            <button
                 onClick={(e) => setTimeFilter("1m")}
-                className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large"
+                className="py-2 rounded-lg px-4 text-sm font-large"
+                style={
+                  timeFilter === "1m"
+                    ? { backgroundColor: "#1DB954" }
+                    : { backgroundColor: "#595959" }
+                }
               >
                 Last month
               </button>
               <button
                 onClick={(e) => setTimeFilter("6m")}
-                className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large"
+                className="py-2 rounded-lg px-4 text-sm font-large"
+                style={
+                  timeFilter === "6m"
+                    ? { backgroundColor: "#1DB954" }
+                    : { backgroundColor: "#595959" }
+                }
               >
                 6 months
               </button>
               <button
                 onClick={(e) => setTimeFilter("all")}
-                className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large"
+                className="py-2 rounded-lg px-4 text-sm font-large"
+                style={
+                  timeFilter === "all"
+                    ? { backgroundColor: "#1DB954" }
+                    : { backgroundColor: "#595959" }
+                }
               >
                 All
               </button>
