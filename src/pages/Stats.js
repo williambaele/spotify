@@ -6,7 +6,7 @@ const Stats = ({ token }) => {
 
   // FILTERS DATA COMING FROM FILTERS COMPONENT //
   const [type, setType] = useState("artists");
-  const [period, setPeriod] = useState("1m");
+  const [period, setPeriod] = useState("short_term");
   const handleTypeChange = (selectedType) => {
     setType(selectedType);
   };
@@ -42,7 +42,7 @@ const Stats = ({ token }) => {
     };
 
     fetchData();
-  }, []);
+  }, [type, period]);
 
   console.log(data);
 
@@ -54,6 +54,10 @@ const Stats = ({ token }) => {
           onPeriodChange={handlePeriodChange}
         />
         <Table data={data} />
+        <p className="text-white container mx-auto">
+        {token}
+
+        </p>
       </div>
     </>
   );
