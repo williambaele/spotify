@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
 const Filters = () => {
-
-  const [activeTypeFilter, setActiveTypeFilter] = useState("artists")
-  const [timeFilter, setTimeFilter] = useState("")
+  const [activeTypeFilter, setActiveTypeFilter] = useState("artists");
+  const [timeFilter, setTimeFilter] = useState("");
 
   return (
     <div className="container mx-auto py-10">
@@ -14,21 +13,41 @@ const Filters = () => {
         <div className="col-span-3  justify-end flex">
           <div className="grid-cols-2 grid gap-4">
             <div className="flex gap-2">
-              <button onClick={(e) => setActiveTypeFilter("artists")}  id="artists" className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954] font-large">
+              <button
+                onClick={(e) => setActiveTypeFilter("artists")}
+                className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954] font-large"
+              >
                 Artists
               </button>
-              <button onClick={(e) => setActiveTypeFilter("tracks")} id="tracks" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button
+                onClick={(e) => setActiveTypeFilter("tracks")}
+                className="py-2 rounded-lg px-4 text-sm font-large"
+                style={
+                  activeTypeFilter === "tracks"
+                    ? { backgroundColor: "#1DB954" }
+                    : { backgroundColor: "#595959" }
+                }
+              >
                 Tracks
               </button>
             </div>
             <div className="flex gap-2">
-              <button onClick={(e) => setTimeFilter("1m")} id="1m" className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button
+                onClick={(e) => setTimeFilter("1m")}
+                className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large"
+              >
                 Last month
               </button>
-              <button onClick={(e) => setTimeFilter("6m")}  id="6m" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button
+                onClick={(e) => setTimeFilter("6m")}
+                className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large"
+              >
                 6 months
               </button>
-              <button onClick={(e) => setTimeFilter("all")}  id="all" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button
+                onClick={(e) => setTimeFilter("all")}
+                className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large"
+              >
                 All
               </button>
             </div>
