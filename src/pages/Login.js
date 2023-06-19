@@ -22,7 +22,6 @@ const Login = () => {
       window.location.hash = "";
       window.localStorage.setItem("token", token);
       window.location.href = "/stats";
-
     }
 
     setToken(token);
@@ -67,7 +66,12 @@ const Login = () => {
                 </a>
               </button>
             ) : (
-              <button onClick={logout}>Logout</button>
+              <button
+                onClick={logout}
+                className="rounded-full bg-[#1DB954] hover:bg-[#1DB954]/90 py-3 px-2 font-bold text-white"
+              >
+                Logout
+              </button>
             )}
           </div>
         </div>
