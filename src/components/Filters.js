@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Filters = () => {
+
+  const [activeTypeFilter, setActiveTypeFilter] = useState("")
+  const [timeFilter, setTimeFilter] = useState("")
+
   return (
     <div className="container mx-auto py-10">
       <div className="grid md:grid-cols-5 items-center px-2 space-y-6 md:space-y-0">
