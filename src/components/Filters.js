@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Filters = ({ onTypeChange, onPeriodChange }) => {
   const [type, setType] = useState("artists");
-  const [period, setPeriod] = useState("1m");
+  const [period, setPeriod] = useState("short_term");
 
   const handleTypeChange = (selectedType) => {
     setType(selectedType);
@@ -47,10 +47,10 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
             </div>
             <div className="flex gap-2">
               <button
-                onClick={(e) => handlePeriodChange("1m")}
+                onClick={(e) => handlePeriodChange("short_term")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  period === "1m"
+                  period === "short_term"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
@@ -58,10 +58,10 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
                 Last month
               </button>
               <button
-                onClick={(e) => handlePeriodChange("6m")}
+                onClick={(e) => handlePeriodChange("medium_term")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  period === "6m"
+                  period === "medium_term"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
@@ -69,10 +69,10 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
                 6 months
               </button>
               <button
-                onClick={(e) => handlePeriodChange("all")}
+                onClick={(e) => handlePeriodChange("long_term")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  period === "all"
+                  period === "long_term"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
