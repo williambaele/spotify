@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Stats from "./pages/Stats";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
