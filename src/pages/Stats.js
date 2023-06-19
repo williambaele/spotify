@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import Filters from "../components/Filters";
 import Table from "../components/Table";
 
-const Stats = ({token}) => {
+const Stats = ({ token }) => {
   const [data, setData] = useState([]);
-
-  console.log(token)
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,8 +30,8 @@ const Stats = ({token}) => {
 
     fetchData();
   }, []);
-  console.log(data)
 
+  console.log(data);
 
   return (
     <>
