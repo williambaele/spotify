@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Filters = () => {
 
-  const [activeTypeFilter, setActiveTypeFilter] = useState("")
+  const [activeTypeFilter, setActiveTypeFilter] = useState("artists")
   const [timeFilter, setTimeFilter] = useState("")
 
   return (
