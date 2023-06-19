@@ -15,7 +15,7 @@ const Filters = () => {
             <div className="flex gap-2">
               <button
                 onClick={(e) => setActiveTypeFilter("artists")}
-                className="py-2 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   activeTypeFilter === "artists"
                     ? { backgroundColor: "#1DB954" }
@@ -26,7 +26,7 @@ const Filters = () => {
               </button>
               <button
                 onClick={(e) => setActiveTypeFilter("tracks")}
-                className="py-2 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   activeTypeFilter === "tracks"
                     ? { backgroundColor: "#1DB954" }
@@ -39,7 +39,7 @@ const Filters = () => {
             <div className="flex gap-2">
               <button
                 onClick={(e) => setTimeFilter("1m")}
-                className="py-2 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   timeFilter === "1m"
                     ? { backgroundColor: "#1DB954" }
@@ -50,7 +50,7 @@ const Filters = () => {
               </button>
               <button
                 onClick={(e) => setTimeFilter("6m")}
-                className="py-2 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   timeFilter === "6m"
                     ? { backgroundColor: "#1DB954" }
@@ -61,7 +61,7 @@ const Filters = () => {
               </button>
               <button
                 onClick={(e) => setTimeFilter("all")}
-                className="py-2 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   timeFilter === "all"
                     ? { backgroundColor: "#1DB954" }
