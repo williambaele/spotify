@@ -4,17 +4,17 @@ const Table = () => {
   return (
     <div className="mx-auto container my-2">
       <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
-        <span className="text-4xl text-[#1DB954] font-extrabold">#1</span>
+        <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">#1</span>
         <img
           src="https://i.scdn.co/image/ab6761610000e5eb1c81ee037386e46e8ed081f3"
           alt=""
-          className="h-16 rounded-lg"
+          className="md:h-16 h-10 rounded-lg"
         />
         <div className="col-span-4">
-          <h2 className="text-3xl font-bold text-[#1DB954]"> Jul</h2>
+          <h2 className="text-xl md:text-3xl font-bold text-[#1DB954]"> Jul</h2>
         </div>
         <div className="col-span-3">
-          <h2 className="text-xl text-[#1DB954]">
+          <h2 className="md:text-xl text-md text-[#1DB954]">
             French Hip Hop - Pop Urbain
           </h2>
         </div>

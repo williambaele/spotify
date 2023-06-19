@@ -5,7 +5,7 @@ import Table from "../components/Table";
 const Stats = () => {
   return (
     <>
-      <div className="h-screen bg-[#121212] overflow-y-auto	">
+      <div className="h-screen bg-[#121212] overflow-y-auto	px-4 md:px-0">
         <Filters />
         <Table />
         <Table />
