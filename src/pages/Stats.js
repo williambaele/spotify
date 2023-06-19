@@ -3,7 +3,6 @@ import Filters from "../components/Filters";
 import Table from "../components/Table";
 
 const Stats = ({ token }) => {
-
   // FILTERS DATA COMING FROM FILTERS COMPONENT //
   const [type, setType] = useState("artists");
   const [period, setPeriod] = useState("1m");
@@ -51,7 +50,7 @@ const Stats = ({ token }) => {
         <Filters
           onTypeChange={handleTypeChange}
           onPeriodChange={handlePeriodChange}
-        />{" "}
+        />
         <Table data={data} />
       </div>
     </>

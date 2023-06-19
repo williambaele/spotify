@@ -23,7 +23,7 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
           <div className="grid-cols-2 grid gap-4">
             <div className="flex gap-2">
               <button
-                onClick={(e) => setType("artists")}
+                onClick={(e) => handleTypeChange("artists")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   type === "artists"
@@ -34,7 +34,7 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
                 Artists
               </button>
               <button
-                onClick={(e) => setType("tracks")}
+                onClick={(e) => handleTypeChange("tracks")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   type === "tracks"
@@ -47,7 +47,7 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
             </div>
             <div className="flex gap-2">
               <button
-                onClick={(e) => setPeriod("1m")}
+                onClick={(e) => handlePeriodChange("1m")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   period === "1m"
@@ -58,7 +58,7 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
                 Last month
               </button>
               <button
-                onClick={(e) => setPeriod("6m")}
+                onClick={(e) => handlePeriodChange("6m")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   period === "6m"
@@ -69,7 +69,7 @@ const Filters = ({ onTypeChange, onPeriodChange }) => {
                 6 months
               </button>
               <button
-                onClick={(e) => setPeriod("all")}
+                onClick={(e) => handlePeriodChange("all")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
                   period === "all"
