@@ -3,17 +3,20 @@ import React from "react";
 const Table = () => {
   return (
     <div className="mx-auto container">
-      <div className="grid grid-cols-4 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
-        <div className="flex gap-4 items-center">
-          <span className="text-4xl text-[#1DB954]">#1</span>
-          <img
-            src="https://i.scdn.co/image/ab6761610000e5eb1c81ee037386e46e8ed081f3"
-            alt=""
-            className="h-16 rounded-lg"
-          />
+      <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
+        <span className="text-4xl text-[#1DB954]">#1</span>
+        <img
+          src="https://i.scdn.co/image/ab6761610000e5eb1c81ee037386e46e8ed081f3"
+          alt=""
+          className="h-16 rounded-lg"
+        />
+        <div className="col-span-4">
+          <h2 className="text-3xl font-bold text-[#1DB954]"> Jul</h2>
         </div>
-        <div className="col-span-2">
-          <h2 className="text-3xl font-large text-white"> Jul</h2>
+        <div className="col-span-3">
+          <h2 className="text-xl font-large text-[#1DB954]">
+            French Hip Hop - Pop Urbain
+          </h2>
         </div>
         <span className="flex justify-end">
           <svg
