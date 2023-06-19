@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const Filters = () => {
-  const [activeTypeFilter, setActiveTypeFilter] = useState("artists");
-  const [timeFilter, setTimeFilter] = useState("1m");
+  const [type, setType] = useState("artists");
+  const [period, setPeriod] = useState("1m");
 
   return (
     <div className="container mx-auto py-10">
@@ -14,10 +14,10 @@ const Filters = () => {
           <div className="grid-cols-2 grid gap-4">
             <div className="flex gap-2">
               <button
-                onClick={(e) => setActiveTypeFilter("artists")}
+                onClick={(e) => setType("artists")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  activeTypeFilter === "artists"
+                  type === "artists"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
@@ -25,10 +25,10 @@ const Filters = () => {
                 Artists
               </button>
               <button
-                onClick={(e) => setActiveTypeFilter("tracks")}
+                onClick={(e) => setType("tracks")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  activeTypeFilter === "tracks"
+                  type === "tracks"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
@@ -38,10 +38,10 @@ const Filters = () => {
             </div>
             <div className="flex gap-2">
               <button
-                onClick={(e) => setTimeFilter("1m")}
+                onClick={(e) => setPeriod("1m")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  timeFilter === "1m"
+                  period === "1m"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
@@ -49,10 +49,10 @@ const Filters = () => {
                 Last month
               </button>
               <button
-                onClick={(e) => setTimeFilter("6m")}
+                onClick={(e) => setPeriod("6m")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  timeFilter === "6m"
+                  period === "6m"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
@@ -60,10 +60,10 @@ const Filters = () => {
                 6 months
               </button>
               <button
-                onClick={(e) => setTimeFilter("all")}
+                onClick={(e) => setPeriod("all")}
                 className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
                 style={
-                  timeFilter === "all"
+                  period === "all"
                     ? { backgroundColor: "#1DB954" }
                     : { backgroundColor: "#595959" }
                 }
