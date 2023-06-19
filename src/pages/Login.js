@@ -21,7 +21,6 @@ const Login = () => {
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
-      window.location.href = "/stats";
     }
 
     setToken(token);

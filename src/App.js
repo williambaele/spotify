@@ -1,18 +1,23 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Stats from "./pages/Stats";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [token, setToken] = useState(null);
 
+  useEffect(() => {
+    const storedToken = localStorage.getItem("spotifyToken");
+    if (storedToken) {
+      setToken(storedToken);
+    }
+  }, []);
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/stats" element={<Stats token={token}/>} />
+          <Route path="/" element={token ? <Stats /> : <Login />} />
         </Routes>
       </BrowserRouter>
     </>
