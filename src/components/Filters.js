@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 
-const Filters = () => {
+const Filters = ({ onTypeChange, onPeriodChange }) => {
   const [type, setType] = useState("artists");
   const [period, setPeriod] = useState("1m");
 
+  const handleTypeChange = (selectedType) => {
+    setType(selectedType);
+    onTypeChange(selectedType);
+  };
+
+  const handlePeriodChange = (selectedPeriod) => {
+    setPeriod(selectedPeriod);
+    onPeriodChange(selectedPeriod);
+  };
   return (
     <div className="container mx-auto py-10">
       <div className="grid md:grid-cols-5 items-center px-2 space-y-6 md:space-y-0">

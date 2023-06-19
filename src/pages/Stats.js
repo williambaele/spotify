@@ -5,6 +5,18 @@ import Table from "../components/Table";
 const Stats = ({ token }) => {
   const [data, setData] = useState([]);
 
+
+
+  // FILTERS DATA COMING FROM FILTERS COMPONENT //
+  const [type, setType] = useState("artists");
+  const [period, setPeriod] = useState("1m");
+  const handleTypeChange = (selectedType) => {
+    setType(selectedType);
+  };
+  const handlePeriodChange = (selectedPeriod) => {
+    setPeriod(selectedPeriod);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,7 +32,7 @@ const Stats = ({ token }) => {
         if (response.ok) {
           const result = await response.json();
           setData(result.items);
-          console.log(result)
+          console.log(result);
         } else {
           console.error("Failed to fetch data from Spotify API.");
         }
@@ -37,7 +49,10 @@ const Stats = ({ token }) => {
   return (
     <>
       <div className="h-screen bg-[#121212] overflow-y-auto px-4 md:px-0 pb-10">
-        <Filters />
+        <Filters
+          onTypeChange={handleTypeChange}
+          onPeriodChange={handlePeriodChange}
+        />{" "}
         <Table data={data} />
       </div>
     </>
