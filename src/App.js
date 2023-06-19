@@ -10,6 +10,7 @@ function App() {
     const storedToken = localStorage.getItem("spotifyToken");
     if (storedToken) {
       setToken(storedToken);
+      window.location.href = "/stats";
     }
   }, []);
 
@@ -17,7 +18,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={token ? <Stats /> : <Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/stats" element={<Stats token={token} />} />
+
         </Routes>
       </BrowserRouter>
     </>

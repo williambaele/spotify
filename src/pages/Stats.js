@@ -2,16 +2,11 @@ import React, { useEffect, useState } from "react";
 import Filters from "../components/Filters";
 import Table from "../components/Table";
 
-const Stats = () => {
+const Stats = ({token}) => {
   const [data, setData] = useState([]);
-  const [token, setToken] = useState("");
 
-  useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    if (storedToken) {
-      setToken(storedToken);
-    }
-  }, []);
+  console.log(token)
+
 
   useEffect(() => {
     const fetchData = async () => {
