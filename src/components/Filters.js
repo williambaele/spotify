@@ -13,9 +13,14 @@ const Filters = () => {
         <div className="col-span-3  justify-end flex">
           <div className="grid-cols-2 grid gap-4">
             <div className="flex gap-2">
-              <button
+            <button
                 onClick={(e) => setActiveTypeFilter("artists")}
-                className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954] font-large"
+                className="py-2 rounded-lg px-4 text-sm font-large"
+                style={
+                  activeTypeFilter === "artists"
+                    ? { backgroundColor: "#1DB954" }
+                    : { backgroundColor: "#595959" }
+                }
               >
                 Artists
               </button>
