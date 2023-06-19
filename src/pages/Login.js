@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Login = () => {
+const Login = ({ onTokenChange }) => {
   const CLIENT_ID = "be2f824d7c214dde83c36641c55fe4cb";
   const REDIRECT_URI = "http://localhost:3000";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
@@ -22,10 +22,10 @@ const Login = () => {
       window.location.hash = "";
       window.localStorage.setItem("token", token);
       window.location.href = "/stats";
-
     }
 
     setToken(token);
+    onTokenChange(token);
   }, []);
 
   const logout = () => {
