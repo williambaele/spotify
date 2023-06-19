@@ -6,9 +6,8 @@ import { useEffect, useState } from "react";
 function App() {
   const [token, setToken] = useState(null);
 
-  const handleTokenChange = (token) => {
-    // Do something with the token, such as storing it in the parent component's state
-    setToken(token);
+  const handleTokenChange = (freshToken) => {
+    setToken(freshToken);
   };
 
   useEffect(() => {
