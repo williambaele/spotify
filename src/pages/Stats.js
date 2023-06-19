@@ -9,10 +9,10 @@ const Stats = ({ token }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50",
+          `https://api.spotify.com/v1/me/top/${type}?limit=50&offset=0&time_range=${period}`,
           {
             headers: {
-              Authorization: token,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -20,6 +20,7 @@ const Stats = ({ token }) => {
         if (response.ok) {
           const result = await response.json();
           setData(result.items);
+          console.log(result)
         } else {
           console.error("Failed to fetch data from Spotify API.");
         }

@@ -1,6 +1,7 @@
 import React from "react";
 
-const Table = () => {
+const Table = ({data}) => {
+  console.log(data)
   return (
     <div className="mx-auto container my-2">
       <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
