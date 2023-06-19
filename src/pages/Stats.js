@@ -4,6 +4,14 @@ import Table from "../components/Table";
 
 const Stats = () => {
   const [data, setData] = useState([]);
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+    if (storedToken) {
+      setToken(storedToken);
+    }
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,7 +20,7 @@ const Stats = () => {
           "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50",
           {
             headers: {
-              Authorization: "Bearer YOUR_ACCESS_TOKEN",
+              Authorization: token,
             },
           }
         );
@@ -20,7 +28,6 @@ const Stats = () => {
         if (response.ok) {
           const result = await response.json();
           setData(result.items);
-          console.log(data)
         } else {
           console.error("Failed to fetch data from Spotify API.");
         }
@@ -31,6 +38,8 @@ const Stats = () => {
 
     fetchData();
   }, []);
+  console.log(data)
+
 
   return (
     <>
