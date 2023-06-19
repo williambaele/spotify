@@ -14,21 +14,21 @@ const Filters = () => {
         <div className="col-span-3  justify-end flex">
           <div className="grid-cols-2 grid gap-4">
             <div className="flex gap-2">
-              <button id="artists" className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954] font-large">
+              <button onClick={(e) => setActiveTypeFilter("artists")}  id="artists" className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954] font-large">
                 Artists
               </button>
-              <button id="tracks" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button onClick={(e) => setActiveTypeFilter("tracks")} id="tracks" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
                 Tracks
               </button>
             </div>
             <div className="flex gap-2">
-              <button id="1m" className="bg-[#595959] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button onClick={(e) => setTimeFilter("1m")} id="1m" className="bg-[#1DB954] py-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
                 Last month
               </button>
-              <button id="6m" className="bg-[#1DB954] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button onClick={(e) => setTimeFilter("6m")}  id="6m" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
                 6 months
               </button>
-              <button id="all" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
+              <button onClick={(e) => setTimeFilter("all")}  id="all" className="bg-[#595959] p-2 rounded-lg px-4 text-sm hover:bg-[#1DB954]  font-large">
                 All
               </button>
             </div>
