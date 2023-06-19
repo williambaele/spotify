@@ -3,9 +3,6 @@ import Filters from "../components/Filters";
 import Table from "../components/Table";
 
 const Stats = ({ token }) => {
-  const [data, setData] = useState([]);
-
-
 
   // FILTERS DATA COMING FROM FILTERS COMPONENT //
   const [type, setType] = useState("artists");
@@ -16,7 +13,9 @@ const Stats = ({ token }) => {
   const handlePeriodChange = (selectedPeriod) => {
     setPeriod(selectedPeriod);
   };
+  /////////////////////////////////////////////////
 
+  const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
