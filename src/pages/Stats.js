@@ -77,7 +77,7 @@ const Stats = ({ token }) => {
           onPeriodChange={handlePeriodChange}
           profileData={profileData}
         />
-        <Table data={data} />
+        <Table data={data} type={type} />
       </div>
     </>
   );
