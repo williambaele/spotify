@@ -24,7 +24,7 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
       <div className="grid md:grid-cols-5 items-center px-2 space-y-6 md:space-y-0">
         <div className="col-span-2 flex gap-3 items-center">
            <img src={picture && picture} alt=""  className="h-14 rounded-xl"/>
-          <h2 className="text-white text-4xl font-bold">{pseudo && pseudo}</h2>
+          <h2 className="text-white text-3xl font-bold">{pseudo && pseudo}</h2>
         </div>
         <div className="col-span-3  justify-end flex">
           <div className="grid-cols-2 grid gap-4">
