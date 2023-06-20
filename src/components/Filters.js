@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
   const [type, setType] = useState("artists");
   const [period, setPeriod] = useState("short_term");
-
   const handleTypeChange = (selectedType) => {
     setType(selectedType);
     onTypeChange(selectedType);
