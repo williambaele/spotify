@@ -25,7 +25,6 @@ const Stats = ({ token }) => {
             },
           }
         );
-
         if (response.ok) {
           const result = await response.json();
           setData(result.items);
