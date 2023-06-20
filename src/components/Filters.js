@@ -15,7 +15,6 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
   };
 
   // USER'S DATA //
-  console.log(profileData)
   const pseudo = profileData && profileData.display_name;
   const picture = profileData && profileData.images[0]?.url;
 

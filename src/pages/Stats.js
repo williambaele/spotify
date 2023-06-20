@@ -31,7 +31,6 @@ const Stats = ({ token }) => {
         if (response.ok) {
           const result = await response.json();
           setData(result.items);
-          console.log(result);
         } else {
           console.error("Failed to fetch data from Spotify API.");
         }
@@ -56,7 +55,6 @@ const Stats = ({ token }) => {
         if (response.ok) {
           const result = await response.json();
           setProfileData(result);
-          console.log(result);
         } else {
           console.error("Failed to fetch profile data from Spotify API.");
         }

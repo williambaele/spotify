@@ -16,7 +16,6 @@ function App() {
     }
   }, []);
 
-  console.log("APP TOKEN:  " + token);
   return <>{token ? <Stats token={token} /> : <Login onTokenChange={handleTokenChange} />}</>;
 }
 
