@@ -3,6 +3,7 @@ import Filters from "../components/Filters";
 import Table from "../components/Table";
 
 const Stats = ({ token }) => {
+  console.log("Stored token stats", token); // Check if token is retrieved correctly
 
   // FILTERS DATA COMING FROM FILTERS COMPONENT //
   const [type, setType] = useState("artists");
