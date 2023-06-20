@@ -42,7 +42,6 @@ const Stats = ({ token }) => {
     fetchData();
   }, [type, period]);
 
-console.log("2")
 
   return (
     <>
