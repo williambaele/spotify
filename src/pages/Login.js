@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Login = ({ onTokenChange }) => {
   const CLIENT_ID = "be2f824d7c214dde83c36641c55fe4cb";
   const REDIRECT_URI = "http://localhost:3000";
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
+  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize?scope=user-top-read";
   const RESPONSE_TYPE = "token";
 
   const [token, setToken] = useState("");
@@ -49,8 +49,8 @@ const Login = ({ onTokenChange }) => {
             <p className="text-xl text-white">Check your stats in a second</p>
             {!token ? (
               <button className="rounded-full bg-[#1DB954] hover:bg-[#1DB954]/90 py-3 px-2 font-bold text-white">
-                <a
-                  href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+                 <a
+                  href={`${AUTH_ENDPOINT}&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
                   className="flex gap-4 items-center justify-center"
                 >
                   <svg

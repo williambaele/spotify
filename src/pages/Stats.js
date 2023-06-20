@@ -32,7 +32,7 @@ const Stats = ({ token }) => {
           const result = await response.json();
           setData(result.items);
         } else {
-          console.error("Failed to fetch data from Spotify API.");
+          console.error("Failed to fetch data from Spotify's API.");
         }
       } catch (error) {
         console.error("An error occurred while fetching data:", error);
