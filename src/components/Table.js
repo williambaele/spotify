@@ -1,7 +1,6 @@
 import React from "react";
 
 const Table = ({ data }) => {
-  console.log(data);
   return (
     <div className="mx-auto container my-2 space-y-3">
       {data.map((item, index) => (
@@ -20,9 +19,12 @@ const Table = ({ data }) => {
             </h2>
           </div>
           <div className="col-span-3">
-            <h2 className="md:text-xl text-md text-[#1DB954]">
-              {item.genres[0]}
-            </h2>
+            {item.genres[0] && (
+              <h2 className="md:text-xl text-md text-[#1DB954]">
+                {item.genres[0].charAt(0).toUpperCase() +
+                  item.genres[0].slice(1)}
+              </h2>
+            )}
           </div>
           <span className="flex justify-end">
             <a href={item.external_urls.spotify}>
