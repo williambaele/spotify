@@ -17,6 +17,7 @@ const Stats = ({ token }) => {
 
   // DATA FETCHING ///
   const [data, setData] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,11 +41,10 @@ const Stats = ({ token }) => {
     };
 
     fetchData();
-  }, [type, period]);
+  }, [type, period, token]);
 
-  console.log("Type: " + type)
-  console.log("Period: " + period)
-
+  console.log("Type: " + type);
+  console.log("Period: " + period);
 
   // USER PROFILE DATA FETCHING //
   const [profileData, setProfileData] = useState(null);
