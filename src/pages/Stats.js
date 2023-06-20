@@ -42,6 +42,32 @@ const Stats = ({ token }) => {
     fetchData();
   }, [type, period]);
 
+  // USER PROFILE DATA FETCHING //
+  const [profileData, setProfileData] = useState(null);
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await fetch("https://api.spotify.com/v1/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response.ok) {
+          const result = await response.json();
+          setProfileData(result);
+          console.log(result);
+        } else {
+          console.error("Failed to fetch profile data from Spotify API.");
+        }
+      } catch (error) {
+        console.error("An error occurred while fetching profile data:", error);
+      }
+    };
+
+    fetchProfileData();
+  }, []);
+
+  console.log(profileData)
 
   return (
     <>
