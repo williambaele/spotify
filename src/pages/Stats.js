@@ -17,7 +17,6 @@ const Stats = ({ token }) => {
 
   // DATA FETCHING ///
   const [data, setData] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
