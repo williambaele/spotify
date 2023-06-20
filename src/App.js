@@ -4,8 +4,9 @@ import Stats from "./pages/Stats";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [token, setToken] = useState(null);
 
+  // TOKEN GRAB //
+  const [token, setToken] = useState(null);
   const handleTokenChange = (freshToken) => {
     setToken(freshToken);
   };
