@@ -3,6 +3,7 @@ import Filters from "../components/Filters";
 import Table from "../components/Table";
 
 const Stats = ({ token }) => {
+
   // FILTERS DATA COMING FROM FILTERS COMPONENT //
   const [type, setType] = useState("artists");
   const [period, setPeriod] = useState("short_term");
@@ -12,6 +13,7 @@ const Stats = ({ token }) => {
   const handlePeriodChange = (selectedPeriod) => {
     setPeriod(selectedPeriod);
   };
+
   // DATA FETCHING ///
   const [data, setData] = useState([]);
   useEffect(() => {
