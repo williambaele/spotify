@@ -42,7 +42,7 @@ const Stats = ({ token }) => {
     fetchData();
   }, [type, period]);
 
-  console.log(data);
+console.log("2")
 
   return (
     <>
