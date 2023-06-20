@@ -16,13 +16,15 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
 
   // USER'S DATA //
   console.log(profileData)
-  const pseudo = profileData.display_name
+  // const pseudo = profileData.display_name
+  // const picture = profileData.images[0].url
 
   return (
     <div className="container mx-auto py-10">
       <div className="grid md:grid-cols-5 items-center px-2 space-y-6 md:space-y-0">
         <div className="col-span-2">
-          <h2 className="text-white text-4xl font-bold">{pseudo}</h2>
+          {/* <h2 className="text-white text-4xl font-bold">{pseudo}</h2> */}
+          {/* <img src={picture} alt="" /> */}
         </div>
         <div className="col-span-3  justify-end flex">
           <div className="grid-cols-2 grid gap-4">

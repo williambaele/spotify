@@ -1,11 +1,13 @@
 import React from "react";
 
-const Table = ({data}) => {
-  console.log(data)
+const Table = ({ data }) => {
+  console.log(data);
   return (
     <div className="mx-auto container my-2">
       <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
-        <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">#1</span>
+        <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">
+          #1
+        </span>
         <img
           src="https://i.scdn.co/image/ab6761610000e5eb1c81ee037386e46e8ed081f3"
           alt=""

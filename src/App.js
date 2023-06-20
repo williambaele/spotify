@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Stats from "./pages/Stats";
 import { useEffect, useState } from "react";
@@ -17,21 +16,8 @@ function App() {
     }
   }, []);
 
-
-
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<Login onTokenChange={handleTokenChange} />}
-          />
-          <Route path="/stats" element={<Stats token={token} />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+  console.log("APP TOKEN:  " + token);
+  return <>{token ? <Stats token={token} /> : <Login onTokenChange={handleTokenChange} />}</>;
 }
 
 export default App;

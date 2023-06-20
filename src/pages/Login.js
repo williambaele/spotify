@@ -22,7 +22,6 @@ const Login = ({ onTokenChange }) => {
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
-      window.location.href = "/stats";
     }
 
     setToken(token);
@@ -33,7 +32,6 @@ const Login = ({ onTokenChange }) => {
     setToken("");
     window.localStorage.removeItem("token");
   };
-
 
   return (
     <div className="h-screen bg-[#121212] flex items-center">
