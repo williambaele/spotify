@@ -13,11 +13,16 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
     setPeriod(selectedPeriod);
     onPeriodChange(selectedPeriod);
   };
+
+  // USER'S DATA //
+  console.log(profileData)
+  // const pseudo = profileData.display_name
+
   return (
     <div className="container mx-auto py-10">
       <div className="grid md:grid-cols-5 items-center px-2 space-y-6 md:space-y-0">
         <div className="col-span-2">
-          <h2 className="text-white text-4xl font-bold">{profileData.display_name}</h2>
+          <h2 className="text-white text-4xl font-bold">Filter</h2>
         </div>
         <div className="col-span-3  justify-end flex">
           <div className="grid-cols-2 grid gap-4">
