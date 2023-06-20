@@ -11,6 +11,7 @@ const Login = ({ onTokenChange }) => {
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
+    console.log("Stored token:", token); // Check if token is retrieved correctly
 
     if (!token && hash) {
       token = hash
@@ -32,6 +33,7 @@ const Login = ({ onTokenChange }) => {
     setToken("");
     window.localStorage.removeItem("token");
   };
+
 
   return (
     <div className="h-screen bg-[#121212] flex items-center">
