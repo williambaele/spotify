@@ -7,6 +7,7 @@ function App() {
   const [token, setToken] = useState(null);
   const handleTokenChange = (freshToken) => {
     setToken(freshToken);
+    localStorage.setItem("token", freshToken);
   };
 
   useEffect(() => {
