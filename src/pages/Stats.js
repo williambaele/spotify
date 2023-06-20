@@ -12,7 +12,6 @@ const Stats = ({ token }) => {
   const handlePeriodChange = (selectedPeriod) => {
     setPeriod(selectedPeriod);
   };
-
   // DATA FETCHING ///
   const [data, setData] = useState([]);
   useEffect(() => {
