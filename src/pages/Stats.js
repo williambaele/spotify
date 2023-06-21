@@ -3,7 +3,7 @@ import Filters from "../components/Filters";
 import Table from "../components/Table";
 
 const Stats = ({ token }) => {
-  console.log("STATS TOKEN: " + token);
+  const [loading, setLoading] = useState(true);
 
   // FILTERS DATA COMING FROM FILTERS COMPONENT //
   const [type, setType] = useState("artists");
@@ -36,12 +36,13 @@ const Stats = ({ token }) => {
         }
       } catch (error) {
         console.error("An error occurred while fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
   }, [type, period, token]);
-
 
   // USER PROFILE DATA FETCHING //
   const [profileData, setProfileData] = useState(null);
@@ -65,7 +66,7 @@ const Stats = ({ token }) => {
     };
 
     fetchProfileData();
-  }, []);
+  }, [token]);
 
   return (
     <>
@@ -75,7 +76,7 @@ const Stats = ({ token }) => {
           onPeriodChange={handlePeriodChange}
           profileData={profileData}
         />
-        <Table data={data} type={type} />
+        {!loading && <Table data={data} type={type} />}
       </div>
     </>
   );
