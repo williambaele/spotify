@@ -30,7 +30,8 @@ const Login = ({ onTokenChange }) => {
       window.localStorage.setItem("tokenValidity", tokenValidity);
     } else {
       const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
-      const tokenExpirationTime = parseInt(tokenCreationTime, 10) + parseInt(tokenValidity, 10);
+      const tokenExpirationTime =
+        parseInt(tokenCreationTime, 10) + parseInt(tokenValidity, 10);
 
       if (currentTime >= tokenExpirationTime) {
         token = ""; // Token expired, reset to empty string
@@ -48,26 +49,32 @@ const Login = ({ onTokenChange }) => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("tokenCreationTime");
     window.localStorage.removeItem("tokenValidity");
-
   };
 
-   // BANNER VISIBILITY
-   const [visibility, setVisibility] = useState(true);
-   const handleVisibility = (selectedVisibility) => {
-     setVisibility(selectedVisibility);
-   };
+  // BANNER VISIBILITY
+  const [visibility, setVisibility] = useState(true);
+  const handleVisibility = (selectedVisibility) => {
+    setVisibility(selectedVisibility);
+  };
 
   return (
     <div className="h-screen bg-[#121212] flex items-center">
       {visibility && <Banner onVisibilityChange={handleVisibility} />}
       <div className="container mx-auto items-center">
         <div className="grid md:grid-cols-2">
-          <div className="flex justify-center">
-            <img
-              src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg"
-              alt=""
-              className="h-40"
-            />
+          <div className="flex jusity-center hidden md:block">
+            <div class="flex justify-center relative mx-auto w-1/2">
+              <img
+                class="object-cover w-64 h-86 rounded-lg"
+                src="https://i.scdn.co/image/ab67706c0000da8406697cc7c96fa0caae2c999c"
+                alt="spotify cover"
+              />
+              <img
+                class="object-cover w-64 h-86 rounded-lg absolute top-20 left-48 hidden md:block"
+                src="https://i.scdn.co/image/ab67706f0000000284ea1f3cd372087893c9a614"
+                alt="spotify cover"
+              />
+            </div>
           </div>
           <div className="justify-center my-6 grid text-center space-y-4">
             <h1 className="text-5xl text-[#1ed760] font-bold">SPOTIFY STATS</h1>
