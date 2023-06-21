@@ -9,13 +9,12 @@ const TracksRow = ({ data }) => {
           <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">
             #{index + 1}
           </span>
-          {/* {item.images && item.images.length > 0 && item.images[0].url && (
             <img
-              src={item.images[0].url}
+              src={item.album.images[0].url}
               alt=""
               className="md:h-16 h-10 rounded-lg"
             />
-          )} */}
+
 
           <div className="col-span-4">
             <h2 className="text-xl md:text-3xl font-bold text-[#1DB954]">
@@ -23,12 +22,7 @@ const TracksRow = ({ data }) => {
             </h2>
           </div>
           <div className="col-span-3">
-
-            <h2 className="md:text-xl text-md text-[#1DB954]">
-              {item.name}
-              
-            </h2>
-
+            <h2 className="md:text-xl text-md text-[#1DB954]">{item.artists[0].name} {item.artists[1] && `, ${item.artists[1].name}`}</h2>
           </div>
           <span className="flex justify-end">
             <a href={item.external_urls.spotify}>
