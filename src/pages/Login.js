@@ -33,20 +33,15 @@ const Login = ({ onTokenChange }) => {
     window.localStorage.removeItem("token");
   };
 
-
   //BANNER VISIBILTY
-  const [visibility, setVisiblity] = useState(false)
+  const [visibility, setVisiblity] = useState(true);
   const handleVisibility = (selectedVisibility) => {
     setVisiblity(selectedVisibility);
   };
 
   return (
     <div className="h-screen bg-[#121212] flex items-center">
-      {visibility === true (
-
-        <Banner onVisibiltyChange={handleVisibility} />
-        ):(<></>)
-    }
+      {visibility && (<Banner onVisibiltyChange={handleVisibility} />)}
       <div className="container mx-auto items-center">
         <div className="grid md:grid-cols-2">
           <div className="flex justify-center">

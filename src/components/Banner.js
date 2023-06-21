@@ -9,9 +9,6 @@ const Banner = ({onVisibilityChange}) => {
     onVisibilityChange(selectedVisibility)
   };
 
-
-
-
   return (
     <div class="fixed inset-x-0 bottom-0 p-4">
       <div class="relative flex items-center justify-between gap-4 rounded-lg bg-[#1DB954] px-4 py-3 text-white shadow-lg">
@@ -20,7 +17,7 @@ const Banner = ({onVisibilityChange}) => {
           registered by myself to use this wonderful app.
         </p>
         <button
-        onClick={(e) => handleVisibility(false)}
+        onClick={(e) => onVisibilityChange(false)}
           aria-label="Close"
           class="shrink-0 rounded-lg bg-black/10 p-1 transition hover:bg-black/20"
         >
