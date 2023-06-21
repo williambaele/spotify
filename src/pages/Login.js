@@ -6,12 +6,13 @@ const Login = ({ onTokenChange }) => {
   const AUTH_ENDPOINT =
     "https://accounts.spotify.com/authorize?scope=user-top-read";
   const RESPONSE_TYPE = "token";
-
   const [token, setToken] = useState("");
 
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
+    let tokenCreationTime = window.localStorage.getItem("tokenCreationTime");
+    let tokenValidity = window.localStorage.getItem("tokenValidity");
 
     if (!token && hash) {
       token = hash
@@ -20,17 +21,34 @@ const Login = ({ onTokenChange }) => {
         .find((elem) => elem.startsWith("access_token"))
         .split("=")[1];
 
+      tokenCreationTime = Math.floor(Date.now() / 1000); // Current time in seconds
+      tokenValidity = 3600; // Token validity in seconds (1 hour)
+
       window.location.hash = "";
       window.localStorage.setItem("token", token);
+      window.localStorage.setItem("tokenCreationTime", tokenCreationTime);
+      window.localStorage.setItem("tokenValidity", tokenValidity);
+    } else {
+      const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+      const tokenExpirationTime = parseInt(tokenCreationTime, 10) + parseInt(tokenValidity, 10);
+
+      if (currentTime >= tokenExpirationTime) {
+        token = ""; // Token expired, reset to empty string
+        window.localStorage.removeItem("token");
+        window.localStorage.removeItem("tokenCreationTime");
+        window.localStorage.removeItem("tokenValidity");
+      }
     }
 
-    setToken(token);
     onTokenChange(token);
-  }, []);
+  }, [onTokenChange]);
 
   const logout = () => {
-    setToken("");
+    setToken(null);
     window.localStorage.removeItem("token");
+    window.localStorage.removeItem("tokenCreationTime");
+    window.localStorage.removeItem("tokenValidity");
+
   };
 
    // BANNER VISIBILITY
