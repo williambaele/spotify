@@ -24,7 +24,9 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
           {picture && (
             <img src={picture && picture} alt="" className="h-14 rounded-xl" />
           )}
-          <h2 className="text-white text-3xl font-bold">{pseudo && pseudo}</h2>
+          {pseudo && (
+            <h2 className="text-white text-3xl font-bold">{pseudo}</h2>
+          )}
         </div>
         <div className="col-span-3  justify-end flex">
           <div className="grid-cols-2 grid gap-4">

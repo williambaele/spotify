@@ -1,17 +1,16 @@
 import React from "react";
 
 const TracksRow = ({ data }) => {
-  console.log(data);
 
   return (
     <>
       {data.map((item, index) => {
-        const image = item.album?.images?.[0]?.url; // Fetch the first album image URL
+        const image = item.album?.images?.[0]?.url;
         const artists = item.artists?.[0]?.name;
         const artists2 = item.artists?.[1]?.name;
 
         return (
-          <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
+          <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center" key={index}>
             <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">
               #{index + 1}
             </span>
@@ -25,7 +24,7 @@ const TracksRow = ({ data }) => {
 
             <div className="col-span-4">
               <h2 className="text-lg md:text-3xl font-bold text-[#1DB954]">
-                {item.name}
+                {item?.name}
               </h2>
             </div>
             <div className="col-span-3">
@@ -34,7 +33,7 @@ const TracksRow = ({ data }) => {
               </h2>
             </div>
             <span className="flex justify-end">
-              <a href={item.external_urls.spotify}>
+              <a href={item.external_urls?.spotify}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

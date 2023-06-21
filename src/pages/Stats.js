@@ -43,7 +43,6 @@ const Stats = ({ token }) => {
   }, [type, period, token]);
 
 
-
   // USER PROFILE DATA FETCHING //
   const [profileData, setProfileData] = useState(null);
   useEffect(() => {

@@ -8,7 +8,7 @@ const ArtistsRow = ({ data }) => {
           <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">
             #{index + 1}
           </span>
-          {item.images && item.images[0] && item.images[0].url && (
+          {item.images?.[0]?.url && (
             <img
               src={item.images[0].url}
               alt=""
@@ -17,11 +17,11 @@ const ArtistsRow = ({ data }) => {
           )}
           <div className="col-span-4">
             <h2 className="text-xl md:text-3xl font-bold text-[#1DB954]">
-              {item.name}
+              {item?.name}
             </h2>
           </div>
           <div className="col-span-3">
-            {item.genres && item.genres[0] && (
+            {item.genres?.[0] && (
               <h2 className="md:text-xl text-md text-[#1DB954]">
                 {item.genres[0].charAt(0).toUpperCase() +
                   item.genres[0].slice(1)}
@@ -29,7 +29,7 @@ const ArtistsRow = ({ data }) => {
             )}
           </div>
           <span className="flex justify-end">
-            <a href={item.external_urls.spotify}>
+            <a href={item.external_urls?.spotify}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
