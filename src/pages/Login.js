@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const Login = ({ onTokenChange }) => {
   const CLIENT_ID = "be2f824d7c214dde83c36641c55fe4cb";
-  // const REDIRECT_URI = "https://spotify-bc5ac.web.app";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize?scope=user-top-read";
   const RESPONSE_TYPE = "token";
 
