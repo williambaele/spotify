@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Banner from "../components/Banner";
 
 const Login = ({ onTokenChange }) => {
   const CLIENT_ID = "be2f824d7c214dde83c36641c55fe4cb";
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize?scope=user-top-read";
+  const AUTH_ENDPOINT =
+    "https://accounts.spotify.com/authorize?scope=user-top-read";
   const RESPONSE_TYPE = "token";
 
   const [token, setToken] = useState("");
@@ -31,8 +33,20 @@ const Login = ({ onTokenChange }) => {
     window.localStorage.removeItem("token");
   };
 
+
+  //BANNER VISIBILTY
+  const [visibility, setVisiblity] = useState(false)
+  const handleVisibility = (selectedVisibility) => {
+    setVisiblity(selectedVisibility);
+  };
+
   return (
     <div className="h-screen bg-[#121212] flex items-center">
+      {visibility === true (
+
+        <Banner onVisibiltyChange={handleVisibility} />
+        ):(<></>)
+    }
       <div className="container mx-auto items-center">
         <div className="grid md:grid-cols-2">
           <div className="flex justify-center">
@@ -47,7 +61,7 @@ const Login = ({ onTokenChange }) => {
             <p className="text-xl text-white">Check your stats in a second</p>
             {!token ? (
               <button className="rounded-full bg-[#1DB954] hover:bg-[#1DB954]/90 py-3 px-2 font-bold text-white">
-                 <a
+                <a
                   href={`${AUTH_ENDPOINT}&client_id=${CLIENT_ID}&redirect_uri=https://spotify-bc5ac.web.app&response_type=${RESPONSE_TYPE}`}
                   className="flex gap-4 items-center justify-center"
                 >
