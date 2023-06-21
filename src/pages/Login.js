@@ -11,7 +11,7 @@ const Login = ({ onTokenChange }) => {
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
-    console.log("Stored token:", token); // Check if token is retrieved correctly
+    console.log("Stored token:", token);
 
     if (!token && hash) {
       token = hash
