@@ -21,7 +21,7 @@ const Stats = ({ token }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.spotify.com/v1/me/top/${type}?limit=20&offset=0&time_range=${period}`,
+          `https://api.spotify.com/v1/me/top/${type}?limit=30&offset=0&time_range=${period}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
