@@ -6,9 +6,10 @@ const TracksRow = ({ data }) => {
   return (
     <>
       {data.map((item, index) => {
-        const image = item.album?.images[0]?.url; // Fetch the first album image URL
-        const artists = item.artists[0]?.name
-        const artists2 = item.artists[1]?.name
+        const image = item.album?.images?.[0]?.url; // Fetch the first album image URL
+        const artists = item.artists?.[0]?.name;
+        const artists2 = item.artists?.[1]?.name;
+
         return (
           <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
             <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">
@@ -23,7 +24,7 @@ const TracksRow = ({ data }) => {
             )}
 
             <div className="col-span-4">
-              <h2 className="text-xl md:text-3xl font-bold text-[#1DB954]">
+              <h2 className="text-lg md:text-3xl font-bold text-[#1DB954]">
                 {item.name}
               </h2>
             </div>
