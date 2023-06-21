@@ -13,6 +13,9 @@ function App() {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
       setToken(storedToken);
+    } else {
+      window.localStorage.removeItem("token");
+      setToken(null)
     }
   }, []);
 

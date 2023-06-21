@@ -1,7 +1,6 @@
 import React from "react";
 
 const TracksRow = ({ data }) => {
-
   return (
     <>
       {data.map((item, index) => {
@@ -10,25 +9,26 @@ const TracksRow = ({ data }) => {
         const artists2 = item.artists?.[1]?.name;
 
         return (
-          <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center" key={index}>
-            <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">
+          <div
+            className="grid grid-cols-10 gap-4 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center"
+            key={index}
+          >
+            <span className="text-lg md:text-4xl text-[#1DB954] font-extrabold">
               #{index + 1}
             </span>
             {image && (
-              <img
-                src={image}
-                alt=""
-                className="md:h-16 h-10 rounded-lg"
-              />
+              <div className="col-span-2 md:col-span-1">
+                <img src={image} alt="" className="h-10 md:h-16 rounded-lg" />
+              </div>
             )}
 
-            <div className="col-span-4">
+            <div className="col-span-3">
               <h2 className="text-lg md:text-3xl font-bold text-[#1DB954]">
-                {item?.name}
+                {item?.name.slice(0, 20)}
               </h2>
             </div>
             <div className="col-span-3">
-              <h2 className="md:text-xl text-md text-[#1DB954]">
+              <h2 className="md:text-lg text-md text-[#1DB954]">
                 {artists && artists} {artists2 && `, ${artists2}`}
               </h2>
             </div>

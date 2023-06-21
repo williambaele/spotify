@@ -33,7 +33,7 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
             <div className="flex gap-2">
               <button
                 onClick={(e) => handleTypeChange("artists")}
-                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-2 md:px-4 text-sm font-large"
                 style={
                   type === "artists"
                     ? { backgroundColor: "#1DB954" }
@@ -44,7 +44,7 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
               </button>
               <button
                 onClick={(e) => handleTypeChange("tracks")}
-                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-2 md:px-4 text-sm font-large"
                 style={
                   type === "tracks"
                     ? { backgroundColor: "#1DB954" }
@@ -57,7 +57,7 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
             <div className="flex gap-2">
               <button
                 onClick={(e) => handlePeriodChange("short_term")}
-                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-2 md:px-4 text-sm font-large"
                 style={
                   period === "short_term"
                     ? { backgroundColor: "#1DB954" }
@@ -68,7 +68,7 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
               </button>
               <button
                 onClick={(e) => handlePeriodChange("medium_term")}
-                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-2 md:px-4 text-sm font-large"
                 style={
                   period === "medium_term"
                     ? { backgroundColor: "#1DB954" }
@@ -79,7 +79,7 @@ const Filters = ({ onTypeChange, onPeriodChange, profileData }) => {
               </button>
               <button
                 onClick={(e) => handlePeriodChange("long_term")}
-                className="md:py-2 py-1 rounded-lg px-4 text-sm font-large"
+                className="md:py-2 py-1 rounded-lg px-2 md:px-4 text-sm font-large"
                 style={
                   period === "long_term"
                     ? { backgroundColor: "#1DB954" }

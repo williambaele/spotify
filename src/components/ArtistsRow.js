@@ -4,26 +4,31 @@ const ArtistsRow = ({ data }) => {
   return (
     <>
       {data.map((item, index) => (
-        <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center" key={index}>
-          <span className="text-xl md:text-4xl text-[#1DB954] font-extrabold">
+        <div
+          className="grid grid-cols-10 gap-4 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center"
+          key={index}
+        >
+          <span className="text-lg md:text-4xl text-[#1DB954] font-extrabold">
             #{index + 1}
           </span>
           {item.images?.[0]?.url && (
-            <img
-              src={item.images[0].url}
-              alt=""
-              className="md:h-16 h-10 rounded-lg"
-            />
+            <div className="col-span-2 md:col-span-1">
+              <img
+                src={item.images[0].url}
+                alt=""
+                className="md:h-16 rounded-lg h-10"
+              />
+            </div>
           )}
-          <div className="col-span-4">
-            <h2 className="text-xl md:text-3xl font-bold text-[#1DB954]">
+          <div className="col-span-3">
+          <h2 className="text-lg md:text-3xl font-bold text-[#1DB954]">
               {item?.name}
             </h2>
           </div>
           <div className="col-span-3">
             {item.genres?.[0] && (
-              <h2 className="md:text-xl text-md text-[#1DB954]">
-                {item.genres[0].charAt(0).toUpperCase() +
+              <h2 className="md:text-lg text-md text-[#1DB954]">
+              {item.genres[0].charAt(0).toUpperCase() +
                   item.genres[0].slice(1)}
               </h2>
             )}
