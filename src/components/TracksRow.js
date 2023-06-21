@@ -2,6 +2,7 @@ import React from 'react';
 
 const TracksRow = ({data}) => {
   return (
+
     <>
     {data.map((item, index) => (
       <div className="grid grid-cols-10 gap-2 bg-[#2a2a2a] px-6 rounded-lg h-20 items-center">
