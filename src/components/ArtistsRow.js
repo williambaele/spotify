@@ -33,7 +33,7 @@ const ArtistsRow = ({ data }) => {
               </h2>
             )}
           </div>
-          <span className="flex justify-end">
+          <span className="flex justify-end col-span-1 md:col-span-2">
             <a href={item.external_urls?.spotify}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
