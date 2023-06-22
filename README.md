@@ -2,7 +2,7 @@
 
 Hi dear music lover 🎧 !
 
-I've made a little application how allows the Spotify's user to check their favorites tracks and artists !
+I've made a little application who allows the Spotify's user to check their favorites tracks and artists !
 
 You can set some filters for a specific period and see your favorites songs.
 
